@@ -1,0 +1,4 @@
+const titles=['MCA Student','Python','Web Developer','Database Learner','Software Development Enthusiast'];
+let i=0,j=0,deleting=false;const el=document.getElementById('typing');
+function type(){const word=titles[i];el.textContent=deleting?word.slice(0,j--):word.slice(0,j++);if(!deleting&&j>word.length){deleting=true;setTimeout(type,1200);return}if(deleting&&j<0){deleting=false;i=(i+1)%titles.length;j=0}setTimeout(type,deleting?55:90)}type();
+document.querySelector('.menu').addEventListener('click',()=>{const nav=document.querySelector('.nav nav');nav.style.display=nav.style.display==='flex'?'none':'flex';nav.style.flexDirection='column';nav.style.position='absolute';nav.style.top='72px';nav.style.right='4%';nav.style.background='#fff';nav.style.padding='18px';nav.style.borderRadius='12px';nav.style.boxShadow='0 15px 35px #0001'});
